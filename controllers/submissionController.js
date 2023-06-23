@@ -229,6 +229,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       source: token.id
     });
 
+    
     const idempotency_key = uuid();
     const charge = await stripe.charges.create(
       {
